@@ -93,20 +93,28 @@ if uploaded_file is not None and model is not None:
             st.info(f"Объект классифицирован как **{форма}** галактика, которая **{ракурс}** и сформирована **{бар}**. Объект оценивается как **{состояние}**.")
 
 # ============================================================
-# 4. АВТОМАТИЧЕСКОЕ ЧТЕНИЕ И СБОРКА ШАБЛОНА ИЗ 1.HTML И STYLE.CSS
+# 4. АВТОМАТИЧЕСКОЕ ЧТЕНИЕ И СБОРКА ШАБЛОНА ДЛЯ ST.COMPONENTS
 # ============================================================
+import streamlit.components.v1 as components  # 🌟 Импортируем модуль компонентов
+
 st.write("---")
 st.subheader("🗺️ Справочник морфологии: Карта Эдвина Хаббла")
 
-if os.path.exists("1.html") and os.path.exists("style.css"):
-    # Открываем и читаем CSS и HTML файлы в правильной кодировке UTF-8
-    with codecs.open("style.css", "r", "utf-8") as f:
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, "style.css")
+html_path = os.path.join(current_dir, "1.html")
+
+if os.path.exists(html_path) and os.path.exists(css_path):
+    with codecs.open(css_path, "r", "utf-8") as f:
         css_content = f.read()
-    with codecs.open("1.html", "r", "utf-8") as f:
+    with codecs.open(html_path, "r", "utf-8") as f:
         html_content = f.read()
         
-    # Соединяем их в единый блок стилизованной разметки
-    full_component = f"<style>{css_content}</style>{html_content}"
-    st.markdown(full_component, unsafe_allow_html=True)
+    # Соединяем стили и разметку
+    full_html_code = f"<style>{css_content}</style>{html_content}"
+    
+    # 🌟 ИСПОЛЬЗУЕМ ЖЕЛЕЗОБЕТОННЫЙ КOМПОНЕНТ ДЛЯ ОТРИСОВКИ
+    # height определяет высоту блока на сайте. На ПК и смартфонах 320px встанет идеально.
+    components.html(full_html_code, height=320, scrolling=False)
 else:
-    st.warning("⚠️ Файлы `1.html` или `style.css` не найдены в корневой папке проекта!")
+    st.warning("⚠️ Файлы `1.html` или `style.css` не найдены в папке проекта!")
