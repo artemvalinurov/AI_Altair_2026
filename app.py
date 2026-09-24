@@ -89,7 +89,7 @@ eval_transforms = transforms.Compose([
 # ============================================================
 st.set_page_config(page_title="Galaxy Classifier CNN", page_icon="🌌", layout="centered")
 
-st.title("🌌 Локальный анализатор галактик (Кастомная CNN)")
+st.title("🌌 Онлайн анализатор галактик (Кастомная CNN)")
 st.write("Загрузите снимок космического объекта со своего компьютера для мгновенного анализа морфологии через Свёрточную Сеть.")
 
 if model is not None:
