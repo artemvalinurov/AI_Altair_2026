@@ -37,20 +37,48 @@
             <div>
                 <div class="section-title">Обычные спирали (S)</div>
                 <div class="tooth-row">
-                    <div class="galaxy-badge" title="Sa: Крупное ядро, тугие рукава">
-                        <svg width="50" height="50" style="background:#050510; border-radius:4px;"><circle cx="25" cy="25" r="8" fill="#ffffff" style="filter:blur(1.5px);"/><path d="M25,17 Q32,17 31,25 Q28,31 25,31 Q18,31 19,25 Q21,17 25,17" stroke="#4ba3e3" stroke-width="2" fill="none"/></svg>
+                    <!-- Sa: Крупное ядро, тугие прижатые рукава -->
+                    <div class="galaxy-badge" title="Sa: Крупное плотное ядро, спиральные рукава туго закручены и прижаты к центру">
+                        <svg width="50" height="50" style="background:#050510; border-radius:4px;">
+                            <!-- Массивное размытое ядро -->
+                            <circle cx="25" cy="25" r="8" fill="#ffffff" style="filter:blur(1.5px); opacity:0.9;"/>
+                            <circle cx="25" cy="25" r="4" fill="#ffffff"/>
+                            <!-- Рукав 1 -->
+                            <path d="M25,18 C33,18 33,31 25,32 C18,32 18,21 24,21" stroke="#4ba3e3" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <!-- Рукав 2 -->
+                            <path d="M25,32 C17,32 17,19 25,18 C32,18 32,29 26,29" stroke="#4ba3e3" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
                         <span>Sa</span>
                     </div>
-                    <div class="galaxy-badge" title="Sb: Сбалансированная спираль (как Андромеда)">
-                        <svg width="50" height="50" style="background:#050510; border-radius:4px;"><circle cx="25" cy="25" r="5" fill="#ffffff"/><path d="M25,11 C37,11 39,25 35,33 C30,41 15,38 15,28" stroke="#58a6ff" stroke-width="2" fill="none"/></svg>
+
+                    <!-- Sb: Сбалансированное ядро, умеренно раскрытая двойная спираль -->
+                    <div class="galaxy-badge" title="Sb: Среднее ядро, классические четкие рукава умеренной раскрытости (как у Андромеды)">
+                        <svg width="50" height="50" style="background:#050510; border-radius:4px;">
+                            <!-- Среднее ядро -->
+                            <circle cx="25" cy="25" r="4" fill="#ffffff" style="filter:blur(0.5px);"/>
+                            <!-- Рукав 1 -->
+                            <path d="M25,21 C36,19 38,34 29,38 C20,42 12,30 21,22" stroke="#58a6ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <!-- Рукав 2 -->
+                            <path d="M25,29 C14,31 12,16 21,12 C30,8 38,20 29,28" stroke="#58a6ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
                         <span>Sb</span>
                     </div>
-                    <div class="galaxy-badge" title="Sc: Свободные клочковатые рукава">
-                        <svg width="50" height="50" style="background:#050510; border-radius:4px;"><circle cx="25" cy="25" r="3" fill="#ffffff"/><path d="M25,6 C44,6 42,42 25,42 C8,42 6,6 25,6" stroke="#a5d6ff" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/></svg>
+
+                    <!-- Sc: Крошечное ядро, максимально свободные размашистые рукава -->
+                    <div class="galaxy-badge" title="Sc: Маленькое слабое ядро, рукава очень свободные, размашистые и клочковатые">
+                        <svg width="50" height="50" style="background:#050510; border-radius:4px;">
+                            <!-- Крошечное ядро-точка -->
+                            <circle cx="25" cy="25" r="2" fill="#ffffff"/>
+                            <!-- Рукав 1 -->
+                            <path d="M25,23 C38,23 45,43 25,45 C7,45 8,15 23,10" stroke="#a5d6ff" stroke-width="1.7" stroke-dasharray="4,1" fill="none" stroke-linecap="round"/>
+                            <!-- Рукав 2 -->
+                            <path d="M25,27 C12,27 5,7 25,5 C43,5 42,35 27,40" stroke="#a5d6ff" stroke-width="1.7" stroke-dasharray="4,1" fill="none" stroke-linecap="round"/>
+                        </svg>
                         <span>Sc</span>
                     </div>
                 </div>
             </div>
+
 
             <!-- Lower Tooth: Спирали с баром -->
             <div>
