@@ -1,13 +1,19 @@
 import os
-import codecs  # Используем для безопасного чтения файлов в UTF-8
+import sys
+import codecs
 import torch
 from torchvision import transforms
 from PIL import Image
 import numpy as np
 import streamlit as st
 
-# Импортируем модель из model.py
+# 🌟 МАГИЧЕСКАЯ СТРОКА ДЛЯ ИСПРАВЛЕНИЯ ПУТЕЙ НА ХОСТИНГЕ:
+# Мы берем путь до папки, где лежит app.py, и принудительно добавляем её в поиск Python
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Теперь импорт сработает идеально как на Windows, так и на Linux-сервере Streamlit!
 from model import CustomGalaxy4DCNN
+
 
 # 1. МОБИЛЬНАЯ НАСТРОЙКА ЭКРАНА
 st.set_page_config(
