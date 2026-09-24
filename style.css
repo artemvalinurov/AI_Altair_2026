@@ -1,0 +1,119 @@
+.hubbles-container {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #0e1117;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+}
+
+.fork-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 20px 0;
+    padding-right: 20px;
+}
+
+.stem {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: linear-gradient(90deg, #1f77b4, #4ba3e3);
+    padding: 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.node-s0 {
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ffffff;
+    z-index: 2;
+    flex-shrink: 0;
+    margin: 0 20px;
+}
+
+.teeth-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    position: relative;
+}
+
+.teeth-container::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 22px;
+    bottom: 22px;
+    width: 2px;
+    background: #4ba3e3;
+}
+
+.tooth-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+}
+
+.tooth-row::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: #4ba3e3;
+}
+
+.galaxy-badge {
+    background: #1c2128;
+    border: 1px solid #444c56;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 65px;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.galaxy-badge:hover {
+    transform: scale(1.08);
+    border-color: #58a6ff;
+    box-shadow: 0 0 12px rgba(88, 166, 255, 0.4);
+}
+
+.section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b949e;
+    margin-bottom: 5px;
+}
+
+/* Адаптивность для экранов мобильных телефонов */
+@media (max-width: 768px) {
+    .fork-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding-right: 0;
+    }
+    .teeth-container::before, .tooth-row::before {
+        display: none;
+    }
+    .stem, .tooth-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .node-s0 {
+        margin: 10px 0;
+    }
+}
