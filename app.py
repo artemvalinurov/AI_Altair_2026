@@ -57,7 +57,7 @@ uploaded_file = st.file_uploader("Выберите снимок галактик
 
 if uploaded_file is not None and model is not None:
     image = Image.open(uploaded_file).convert("RGB")
-    col1, col2 = st.columns()
+    col1, col2 = st.columns(2)
     
     with col1:
         st.image(image, caption="Входной кадр", use_column_width=True)
