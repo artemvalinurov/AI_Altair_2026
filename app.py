@@ -108,7 +108,7 @@ if uploaded_file is not None and model is not None:
     
     with col1:
         # use_column_width=True заставляет картинку идеально сжиматься под ширину экрана смартфона
-        st.image(image, caption="Входной кадр", use_column_width=True)
+        st.image(image, caption="Входной кадр", use_container_width=True)
         
     with col2:
         st.subheader("Морфологический профиль CNN:")
